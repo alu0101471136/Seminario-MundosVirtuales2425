@@ -140,11 +140,36 @@ Componentes del grupo:
 
 ### 16. **Investiga sobre los modelos de iluminación que aplica Unity y resume las relaciones existentes con el modelo explicado en clase.**
 
-    Unity usa varios modelos de iluminación como:
-    - **Phong (o Blinn-Phong)**: Iluminación difusa y especular. Aunque no son lo mismo, Blinn-Phong es una variación del modelo Phong que cambia la forma en que se calcula el componente especular para mejorar el rendimiento en gráficos 3D. Este cambio suele considerarse una mejora del modelo Phong, pero es un detalle técnico relevante.
-    - **PBR (Physically Based Rendering)**: Más realista, que tiene en cuenta propiedades como la rugosidad y la reflectancia.
+  # Relación entre tipos de luz en Unity y conceptos de iluminación gráfica
 
-    Estos modelos se relacionan con la teoría de iluminación de Lambert, que explica los componentes de luz ambiental, difusa y especular.
+#### 1. Point Light y Luz Local
+En Unity, las **Point Lights** emiten luz desde un punto en todas las direcciones, con intensidad que disminuye según la ley del cuadrado inverso.  
+En las transparencias, esto corresponde al concepto de **luz local**, donde la fuente de luz se encuentra en un punto definido y afecta a los objetos según su distancia.
+
+---
+
+#### 2. Spot Light y Foco
+Los **Spotlights** de Unity emiten luz en forma de cono con dirección, apertura y atenuación controladas.  
+Esto está directamente relacionado con el concepto de **foco** de la presentación, que describe una luz puntual con un área de influencia en forma de cono, definida por dirección y apertura.
+
+---
+
+#### 3. Area Light y Material Emisor
+En Unity, las **Área Lights** iluminan desde un rectángulo, produciendo sombras suaves. Estas luces aparecen en tiempo real.  
+La presentación describe luces basadas en **radiosidad** y energía emitida por áreas, que es el principio detrás de las luces de área. Además, se relacionan con los **materiales emisores**, ya que ambos distribuyen luz de manera difusa sobre su entorno.
+
+---
+
+#### 4. Emissive Materials y Materiales Emisores
+Unity permite que los **materiales emisores** emitan luz según sus propiedades, contribuyendo a la iluminación global de la escena.  
+Esto coincide con el tema de los **materiales emisores** dentro de la presentación, que emiten luz desde su superficie y afectan a los objetos estáticos en la escena.
+
+---
+
+#### 5. Ambient Light y Luz Ambiente
+En Unity, la **Ambient Light** ilumina toda la escena de manera uniforme, sin una fuente de luz específica.  
+En las transparencias, se describe como un componente del **modelo de iluminación local**, que simula un brillo constante en todos los objetos, similar a un "flash" en una habitación oscura.
+
 
 ### 17. **Indica las funciones de la API de Unity más importantes respecto a la iluminación.**
 
