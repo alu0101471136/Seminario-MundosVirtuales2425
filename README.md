@@ -140,8 +140,6 @@ Componentes del grupo:
 
 ### 16. **Investiga sobre los modelos de iluminación que aplica Unity y resume las relaciones existentes con el modelo explicado en clase.**
 
-  # Relación entre tipos de luz en Unity y conceptos de iluminación gráfica
-
 #### 1. Point Light y Luz Local
 En Unity, las **Point Lights** emiten luz desde un punto en todas las direcciones, con intensidad que disminuye según la ley del cuadrado inverso.  
 En las transparencias, esto corresponde al concepto de **luz local**, donde la fuente de luz se encuentra en un punto definido y afecta a los objetos según su distancia.
