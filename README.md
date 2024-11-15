@@ -1,9 +1,10 @@
 # Seminario-MundosVirtuales2425
-Grupo: 
+Componentes del grupo: 
 - Raúl Álvarez Pérez
 - Juan Aday Siverio González
 - Diego Rodríguez Martín
 - Sergio Nicolás Segui
+
 ### 1. **Qué funciones se pueden usar en los scripts de Unity para llevar a cabo traslaciones, rotaciones y escalados.**
    
    En Unity, se pueden usar funciones de la clase `Transform` para manipular los objetos en el espacio 3D:
@@ -16,12 +17,14 @@ Grupo:
 ### 2. **Cómo trasladarías la cámara 2 metros en cada uno de los ejes y luego la rotas 30º alrededor del eje Y. ¿Obtendrías el mismo resultado en ambos casos? Justifica el resultado.**
 
    - **Primera Opción (Traslación y luego Rotación):**
+
      ```csharp
      transform.Translate(new Vector3(2, 2, 2));
      transform.Rotate(0, 30, 0);
      ```
 
    - **Segunda Opción (Rotación y luego Traslación):**
+
      ```csharp
      transform.Rotate(0, 30, 0);
      transform.Translate(new Vector3(2, 2, 2));
@@ -40,6 +43,7 @@ Grupo:
 ### 5. **Cómo puedes aumentar el ángulo de la cámara. Qué efecto tiene disminuir el ángulo de la cámara.**
 
    Para cambiar el ángulo de visión:
+   
    ```csharp
    Camera.fieldOfView = nuevoValor;
    ```
@@ -53,6 +57,7 @@ Grupo:
 ### 7. **Especifica las rotaciones que se han indicado en los ejercicios previos con la utilidad `Quaternion`.**
 
    Usar `Quaternion.Euler(x, y, z)` permite aplicar rotaciones en Unity de manera precisa. Por ejemplo, la rotación que tuvimos que aplicar en el ejercicio 2 se podría hacer de la siguiente forma:
+  
    ```csharp
    transform.rotation = Quaternion.Euler(0, 30, 0);
    ```
@@ -60,6 +65,7 @@ Grupo:
 ### 8. **¿Cómo puedes averiguar la matriz de proyección en perspectiva que se ha usado para proyectar la escena al último frame renderizado?**
 
    La matriz de proyección en perspectiva actual de la cámara puede obtenerse con:
+   
    ```csharp
    Matrix4x4 perspectiveMatrix = Camera.main.projectionMatrix;
    ```
@@ -67,10 +73,13 @@ Grupo:
 ### 9. **¿Cómo puedes averiguar la matriz de proyección en perspectiva ortográfica que se ha usado para proyectar la escena al último frame renderizado?**
 
    Cambia la cámara a modo ortográfico:
+  
    ```csharp
    Camera.main.orthographic = true;
    ```
+
    Luego usa:
+  
    ```csharp
    Matrix4x4 orthoMatrix = Camera.main.projectionMatrix;
    ```
@@ -78,6 +87,7 @@ Grupo:
 ### 10. **¿Cómo puedes obtener la matriz de transformación entre el sistema de coordenadas local y el mundial?**
 
     La matriz que convierte de coordenadas locales a mundiales se obtiene con:
+    
     ```csharp
     Matrix4x4 localToWorld = transform.localToWorldMatrix;
     ```
@@ -85,6 +95,7 @@ Grupo:
 ### 11. **Cómo puedes obtener la matriz para cambiar al sistema de referencia de vista.**
 
     La matriz de vista se puede obtener con:
+    
     ```csharp
     Matrix4x4 viewMatrix = Camera.main.worldToCameraMatrix;
     ```
@@ -92,6 +103,7 @@ Grupo:
 ### 12. **Especifica la matriz de la proyección usada en un instante de la ejecución del ejercicio 1 de la práctica 1.**
 
     Durante la ejecución, puedes revisar la matriz de proyección de la cámara en cualquier instante:
+    
     ```csharp
     Matrix4x4 currentProjection = Camera.main.projectionMatrix;
     ```
@@ -102,6 +114,7 @@ Grupo:
     - **Matriz de Vista**: Es `Camera.main.worldToCameraMatrix`.
 
 ### 14. **Aplica una rotación en el `Start` de uno de los objetos de la escena y muestra la matriz de cambio al sistema de referencias mundial.**
+    
     ```csharp
     void Start() {
         transform.Rotate(45, 0, 0);
@@ -114,6 +127,7 @@ Grupo:
     **Position** `(3, 1, 1)`, **Rotation** `(45, 0, 45)`
 
     Si tienes una posición `(3, 1, 1)` y una rotación `(45, 0, 45)`, puedes obtener la matriz completa con:
+    
     ```csharp
     Vector3 position = new Vector3(3, 1, 1);
     Quaternion rotation = Quaternion.Euler(45, 0, 45);
